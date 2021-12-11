@@ -8,10 +8,6 @@ Original file is located at
 """
 
 import math
-#import numpy as np
-#import matplotlib.pyplot as plt
-#import pandas as pd
-#import csv
 
 """New Field Deployment File for Sound Sensor
 
@@ -104,7 +100,7 @@ def sample_sound(sleep_flag=0,sample_interval_sec=30): #set this sample sleeping
     # Sample and save data
     #------------------------------- 
 
-    print("starting to listen")
+    print("starting to listen") # useful in real-time testing
     
 
     DataToSave = "" #create list to save
@@ -134,9 +130,9 @@ def sample_sound(sleep_flag=0,sample_interval_sec=30): #set this sample sleeping
         s = math.sqrt(v) #calculates standard deviation
 
         
-
+        # save timestamp, amplitude, mean, and standard deviation to csv file
         DataToSave += str(timeStamp) + ',' + str(a) + ',' + str(m) + ',' + str(s) + '\n'
-        sleep_ms(500)    # pause for 1 sec
+        sleep_ms(500)    # pause for 0.5 sec
 
     print(DataToSave)
     
